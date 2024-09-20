@@ -1,8 +1,7 @@
 import './mylabel.css';
-import { CustomColor } from '../stories/MyLabel.stories';
 
 
-interface Props {
+export interface Props {
   /**
    * Display a text as label
    */
@@ -26,7 +25,7 @@ interface Props {
   /**
    * Set a custom color
    */ 
-    backgroundColor?: string; 
+  backgroundColor?: string; 
 }
 
 

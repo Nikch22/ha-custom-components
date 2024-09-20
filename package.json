@@ -1,20 +1,46 @@
 {
-  "name": "try-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "ha-custom-components",
+  "private": false,
+  "version": "0.0.1-rc3",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "hasm",
+    "react",
+    "dev"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Nikch22/storybook-components",
+  "repository": {
+    "url": "",
+    "type": "git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "yarn storybook",
-    "build": "tsc -b && vite build",
+    "build": "yarn clean && tsc && yarn copyfiles",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_bdd8629c6ed79d4"
+    "chromatic": "npx chromatic --project-token=chpt_bdd8629c6ed79d4",
+    "clean": "rimraf dist/",
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "ha-custom-components": "file:",
     "try-storybook": "file:"
   },
   "devDependencies": {
@@ -32,11 +58,15 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "chromatic": "^11.10.2",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
     "storybook": "8.3.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
