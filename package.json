@@ -23,11 +23,10 @@
       "main"
     ]
   },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
   "type": "module",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "scripts": {
     "dev": "yarn storybook",
     "build": "yarn clean && tsc && yarn copyfiles",
@@ -37,7 +36,12 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_bdd8629c6ed79d4",
     "clean": "rimraf dist/",
-    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/",
+    "push:npm": "np"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
     "ha-custom-components": "file:",
@@ -64,6 +68,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.9.0",
+    "np": "^10.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
