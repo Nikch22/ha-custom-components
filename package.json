@@ -46,8 +46,6 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "ha-custom-components": "file:",
-    "try-storybook": "file:"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
