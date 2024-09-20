@@ -15,6 +15,9 @@ const meta = {
     },
     fontColor: {
       control: 'color'
+    },
+    backgroundColor: {
+      control: 'color'
     }
   }
 } satisfies Meta<typeof MyLabel>
@@ -49,6 +52,16 @@ export const CustomColor: Story = {
   args: {
     label: 'CustomColor',
     fontColor:'#9a0a6a',
+    size: 'h1'
+  }
+}
+
+
+export const CustomBackgroundColor: Story = {
+  args: {
+    label: 'Background Color',
+    color: 'text-tertiary',
+    backgroundColor: '#ffe6d4',
     size: 'h1'
   }
 }
